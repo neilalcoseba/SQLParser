@@ -1,6 +1,7 @@
 package org.alcoseba.sqlparser.antlr4.impl;
 
 import org.alcoseba.sqlparser.antlr4.SQLiteBaseListener;
+import org.alcoseba.sqlparser.antlr4.SQLiteParser.Create_index_stmtContext;
 import org.alcoseba.sqlparser.antlr4.SQLiteParser.Create_table_stmtContext;
 import org.alcoseba.sqlparser.antlr4.SQLiteParser.Table_nameContext;
 
@@ -11,6 +12,11 @@ public class SQLiteVisitor extends SQLiteBaseListener {
 		System.out.println("Entering Create Table");
 
 		super.enterCreate_table_stmt(ctx);
+	}
+
+	@Override
+	public void enterCreate_index_stmt(Create_index_stmtContext ctx) {
+		super.enterCreate_index_stmt(ctx);
 	}
 
 	@Override

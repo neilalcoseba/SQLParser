@@ -15,7 +15,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 public class App {
 	public static void main(String[] args) throws IOException {
-		String input = "create table t (s char(19))";
+		String input = "create table t (s char(19)); CREATE UNIQUE INDEX dept_unique_index ON dept (dname);";
 		InputStream stream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
 		SQLiteLexer sqliteLexer = new SQLiteLexer(CharStreams.fromStream(stream));
 		CommonTokenStream tokens = new CommonTokenStream(sqliteLexer);
